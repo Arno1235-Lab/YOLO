@@ -10,7 +10,3 @@ train_results = model.train(
     imgsz=640,  # training image size
     device="cpu",  # device to run on, i.e. device=0 or device=0,1,2,3 or device=cpu
 )
-
-# Perform object detection on an image
-results = model("dataset/images/val/3_012.png")
-results[0].show()
