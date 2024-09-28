@@ -39,6 +39,8 @@ def create_yolo_annotation(labels_file, class_id, polygons):
 
 if __name__ == '__main__':
 
+    # TODO: also create test set
+
     train_split = 0.7
 
     mask_folder = 'mvtec_anomaly_detection/hazelnut/ground_truth'
