@@ -169,3 +169,4 @@ cython_debug/
 *.jpg
 *.png
 *.pt
+*.DS_Store
