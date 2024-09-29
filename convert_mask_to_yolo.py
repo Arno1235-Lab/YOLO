@@ -41,15 +41,24 @@ if __name__ == '__main__':
 
     # TODO: also create test set
 
-    train_split = 0.7
+    train_val_test_split = [0.6, 0.2, 0.2]
+
+    assert sum(train_val_test_split) == 1.0, f'Sum of the train val test split has to be 1.0, but is {sum(train_val_test_split)}'
 
     mask_folder = 'mvtec_anomaly_detection/hazelnut/ground_truth'
     img_folder = 'mvtec_anomaly_detection/hazelnut/test'
 
     out_folder = 'dataset'
 
-    # TODO: create dataset folders
-    # os.mkdir(out_folder, )
+    os.makedirs(out_folder, exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'images'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'images/train'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'images/val'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'images/test'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'labels'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'labels/train'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'labels/val'), exist_ok=True)
+    os.makedirs(os.path.join(out_folder, 'labels/test'), exist_ok=True)
 
     dataset_config = {
         'path': os.path.join(os.getcwd(), out_folder),
