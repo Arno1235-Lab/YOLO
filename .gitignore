@@ -166,7 +166,6 @@ cython_debug/
 *mvtec*
 *dataset*
 *runs*
-*.jpg
 *.png
 *.pt
 *.DS_Store
