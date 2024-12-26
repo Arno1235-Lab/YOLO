@@ -1,3 +1,5 @@
+*Repo moved to: https://github.com/Arno1235-Lab/YOLO*
+
 # MVTec_YOLO
 Run yolo models on the MVTec dataset
 
