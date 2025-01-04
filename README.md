@@ -1,3 +1,8 @@
+framework:
+```
+sudo ./commands.sh create 39 ~/Documents/projects/personal/YOLO
+```
+
 # MVTec_YOLO
 Run yolo models on the MVTec dataset
 
