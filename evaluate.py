@@ -1,9 +1,14 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO("runs/segment/train2/weights/best.pt")
+model = YOLO("001-IS-MVTec/train/weights/best.pt")
 
 # TODO: run validation on test set
 
 # Predict on folder
-model.predict('dataset/images/train', save=True)
+model.predict(
+    'data/dataset/images/train',
+    project="001-IS-MVTec",
+    save=True,
+)
+
