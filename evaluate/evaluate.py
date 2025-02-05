@@ -9,7 +9,7 @@ from ultralytics import YOLO
 if __name__ == '__main__':
     set_mlflow_tracking()
 
-    parser = argparse.ArgumentParser(description='YOLO train')
+    parser = argparse.ArgumentParser(description='YOLO evaluate')
     parser.add_argument('-c', '--config', type=str, required=True, help='YAML config file')
     args = parser.parse_args()
 
