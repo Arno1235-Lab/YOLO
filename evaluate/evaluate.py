@@ -1,6 +1,6 @@
 import sys
 sys.path.append('..')
-from utils import set_mlflow_tracking
+from yolo_utils import set_mlflow_tracking
 import argparse
 import yaml
 from ultralytics import YOLO
