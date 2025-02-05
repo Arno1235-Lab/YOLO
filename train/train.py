@@ -31,3 +31,5 @@ if __name__ == '__main__':
         device=config_file['mlflow']['device'],
     )
 
+    # TODO: log weights to mlflow artifact?
+
