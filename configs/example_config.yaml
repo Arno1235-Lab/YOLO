@@ -1,9 +1,14 @@
 model:
   path: yolov8m-seg.pt
+  weights: best.pt  # which weights to use for eval and inference (best or last)
 
 mlflow:
   project: "001-IS-MVTec"  # mlflow experiment name
-  data: ./data/dataset/dataset.yaml  # path to dataset YAML
+
+dataset:
+  path: ./data/dataset/dataset.yaml  # path to dataset YAML
+
+train:
   epochs: 100  # number of training epochs
   imgsz: 640  # training image size
   batch: 2  # batch size

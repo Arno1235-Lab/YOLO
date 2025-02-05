@@ -1,21 +1,13 @@
 import sys
 sys.path.append('..')
-from yolo_utils import set_mlflow_tracking
-import argparse
-import yaml
+from yolo_utils import set_mlflow_tracking, parse_config
 from ultralytics import YOLO
 
 
 if __name__ == '__main__':
     set_mlflow_tracking()
 
-    parser = argparse.ArgumentParser(description='YOLO train')
-    parser.add_argument('-c', '--config', type=str, required=True, help='YAML config file')
-    args = parser.parse_args()
-
-    # Load the config file
-    with open(args.config, 'r') as ymlfile:
-        config_file = yaml.load(ymlfile, Loader=yaml.Loader)
+    config_file = parse_config()
 
 
     # Load a model
@@ -24,12 +16,12 @@ if __name__ == '__main__':
     # Train the model
     train_results = model.train(
         project=config_file['mlflow']['project'],
-        data=config_file['mlflow']['data'],
-        epochs=config_file['mlflow']['epochs'],
-        imgsz=config_file['mlflow']['imgsz'],
-        batch=config_file['mlflow']['batch'],
-        device=config_file['mlflow']['device'],
+        data=config_file['dataset']['path'],
+        epochs=config_file['train']['epochs'],
+        imgsz=config_file['train']['imgsz'],
+        batch=config_file['train']['batch'],
+        device=config_file['train']['device'],
     )
 
-    # TODO: log weights to mlflow artifact?
+    # TODO: log weights to mlflow artifact? or does this automatically happen?
 
